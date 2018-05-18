@@ -43,28 +43,13 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <div className="wrapper">
-          <div id="header-container" />
-          <Titles className="titles" />
+        <div id="header-container" />
+        <Titles className="titles" />
 
-          <Form className="form" getWeather={this.getWeather} />
+        <Form className="form" getWeather={this.getWeather} />
 
-          <Weather />
-        </div>
-        <div>
-          <h1 className="about">About</h1>
-          <p>This is a simple weather app that utilizes a single get.</p>
-          <p>
-            In this app i make a single axios get call that currently feeds to a
-            get endpoint
-          </p>
-          <p>
-            The API can be found at{" "}
-            <a href="www.openweathermap.com" rel="api">
-              www.openweathermap.com/api{" "}
-            </a>
-          </p>
-        </div>
+        <Weather />
+
         <div className="footer" display="horizontal" />
       </div>
     );
