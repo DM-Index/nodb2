@@ -7,20 +7,20 @@ export default class Form extends Component {
       search: "",
       results: []
     };
-    this.updateChange = this.updateChange.bind(this);
-    this.onClickHandler = this.onClickHandler.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
   // Tracks typing changes
-  // This currently sends logs empty proxy o
-  updateChange(e) {
+  handleChange(e) {
     console.log(e);
     // ^ This is still tracking empty objects
     this.setState({ search: e.target.value });
-    e.preventDefault();
   }
   // Sets value of Search = Results.
-  onClickHandler(props) {
+  handleSubmit(props) {
+    console.log(this.props);
     this.setState({ results: this.props.search });
+    props.preventDefault();
   }
 
   render() {
@@ -29,7 +29,7 @@ export default class Form extends Component {
       <div className="form">
         <input
           placeholder="Search City Here..."
-          onChange={e => this.updateChange(e)}
+          onChange={e => this.handleChange(e)}
         />
         <button
           onClick={() => this.props.getWeather(this.state.search)}

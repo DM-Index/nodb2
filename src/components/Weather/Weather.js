@@ -1,5 +1,5 @@
 import React from "react";
-// What do i do with this? Props can't move from a child to parent so how is this information getting out?
+// This function exports directly into the App Render Method. Everything on this page seems functional.
 const Weather = props => {
   console.log(props);
   return (

@@ -31,11 +31,10 @@ class App extends Component {
       .get(`/data/weather/${param}`)
       .then(response => {
         console.log(response);
+        // ^ is logging but what do i do with the data?
       })
-      // ^ REQUEST FAILED WITH 404. This has been a consistent error.
       .catch(error => {
         console.log("Error", error);
-        // ^ Failed to load resource: SERVER ERROR CODE 500(Internal Server Error)
       });
   };
 

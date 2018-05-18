@@ -17,8 +17,7 @@ app.use(json());
 app.use(cors());
 // Controller Methods
 const { getData } = require(`${__dirname}/controllers/weather_controller`);
-
-// Get initial initial data
+// Get initial data
 app.get("/data/weather/:search", getData);
 // ----^ CB function is not working, logging as an anon obj----
 
