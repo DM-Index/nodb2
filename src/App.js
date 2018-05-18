@@ -5,6 +5,7 @@ import Header from "./components/Header/Header";
 import Titles from "./components/Titles/Titles";
 import Form from "./components/Form/Form";
 import Weather from "./components/Weather/Weather";
+import Smile from "./components/Smile/Smile";
 import Footer from "./components/Footer/Footer";
 // Importing axios as HTTP client
 import axios from "axios";
@@ -41,16 +42,17 @@ class App extends Component {
         console.log("Error", error);
       });
   };
-
   // Components rendered top-down in parent div.
   render() {
     return (
       <div className="App">
         <Header />
+        <Smile />
         <Container />
         <Titles />
         <Form />
         <Weather />
+        <Smile />
         <Footer />
       </div>
     );

@@ -7,12 +7,12 @@ export default class Form extends Component {
       search: [],
       results: []
     };
-    this.updateChange = this.updateChange.bind(this);
+    this.handleChange = this.handleChange.bind(this);
     this.onClickHandler = this.onClickHandler.bind(this);
   }
   // Tracks typing changes
   //! This currently sends logs empty proxy o
-  updateChange(e) {
+  handleChange(e) {
     console.log(e);
     //! ^ This is still tracking empty objects
     this.setState({ search: e.target.value });
@@ -29,14 +29,24 @@ export default class Form extends Component {
       <div className="form">
         <input
           placeholder="Search City Here..."
-          onChange={e => this.updateChange(e)}
+          onChange={e => this.handleChange(e)}
         />
-        <button
-          onClick={() => this.props.getWeather(this.state.search)}
-          id="form-button"
-          //! ^ TypeError: _this2.props.getWeather is not a function
-        />
+        <button onClick={() => this.props.getWeather(this.state.search)} />
       </div>
     );
   }
 }
+
+// render() {
+//   console.log(this.props);
+//   return (
+//     <div className="form">
+//       <input
+//         placeholder="Search City Here..."
+//         onChange={e => this.handleChange(e)}
+//       />
+//       <button onClick={() => this.props.getWeather(this.state.search)} />
+//     </div>
+//   );
+// }
+// }
