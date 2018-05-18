@@ -18,7 +18,7 @@
 
 
 //api.openweathermap.org/data/2.5/weather?q=Dallas&type=accurate&APPID=0ee7c0a760947bbbbf1ed51ba8118579
-
+// const { getData } = require("./controllers/weather_controller");
 
 
 async componentDidMount() {

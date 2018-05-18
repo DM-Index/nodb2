@@ -9,8 +9,8 @@ import axios from "axios";
 import "./App.css";
 
 class App extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
       weather: [],
@@ -24,10 +24,11 @@ class App extends Component {
     this.getWeather = this.getWeather.bind(this);
   }
   // Persistent error on line #34
-  // This takes the response from our input and sends the search results for city to our server
+  // This takes the response from our input and sends the search results for city to our server\
+  // Err =  Empty Response
   getWeather = param => {
     axios
-      .get(`/data/2.5/Weather/${param}`)
+      .get(`/data/weather/${param}`)
       .then(response => {
         console.log(response);
       })
@@ -43,7 +44,7 @@ class App extends Component {
         <Titles className="titles" />
 
         <Form className="form" getWeather={this.getWeather} />
-        <Weather>{Weather}</Weather>
+        <Weather>{this.state.Weather}</Weather>
 
         <div className="footer" display="horizontal" />
       </div>
