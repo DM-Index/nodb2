@@ -1,0 +1,99 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(#355c7d, #6c5b7b, #c06c84);
+  text-align: center;
+}
+
+/* Header */
+#header-container {
+  height: 100px;
+  width: 100vw;
+  background-color: #1e202b;
+  border-bottom-style: 3px solid black;
+  text-align: right;
+}
+
+#logo {
+  background-image: url(https://demo.themezy.com/system/resources/demo_themes/000/000/128//images/logo.png);
+  height: 50px;
+  width: 50px;
+  padding: 10px;
+  background-repeat: no-repeat;
+  display: block;
+  margin-right: auto;
+}
+
+#links {
+  display: inline;
+
+  color: white;
+}
+
+#links a {
+  padding: 25px;
+  justify-content: start;
+}
+
+#links:hover {
+  background-color: orange;
+}
+
+/* TITLES */
+.titles {
+  text-align: right;
+}
+
+.title-container {
+  text-align: center;
+  justify-content: center;
+  display: inline-block;
+}
+/* FORM */
+#form {
+  display: inline;
+}
+
+.form-input {
+  height: 20px;
+}
+
+#form-button {
+  border-radius: 5px;
+  width: 70px;
+  height: 35px;
+}
+
+/* FOOTER */
+.footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  text-align: right;
+  background-color: #474747;
+  border-top: 3px solid black;
+  width: 100vw;
+  height: 75px;
+  text-align: center;
+  align-content: flex-end;
+}
+
+.input-sub {
+  width: 500px;
+}
+
+#test {
+  background-color: #4caf50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}

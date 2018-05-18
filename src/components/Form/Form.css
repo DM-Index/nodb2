@@ -1,0 +1,14 @@
+/* FORM */
+#form {
+  display: inline;
+}
+
+.form-input {
+  height: 20px;
+}
+
+#form-button {
+  border-radius: 5px;
+  width: 70px;
+  height: 35px;
+}

@@ -1,0 +1,53 @@
+async componentDidMount() {
+  const res = await fetch('http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${API_KEY}&units=metric')
+  const api_call = await res.json()
+        this.setState({
+        temperature: data.main.temp,
+        city: data.name,
+        country: data.sys.country,
+        humidity: data.main.humidity,
+        description: data.weather[0].description,
+        error: ""
+      });
+}
+componentDidMount() {
+  fetch('http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${API_KEY}&units=metric')
+    .then((res) => res.json())
+    .then((api_call) => this.setState({
+        temperature: data.main.temp,
+        city: data.name,
+        country: data.sys.country,
+        humidity: data.main.humidity,
+        description: data.weather[0].description,
+        error: ""
+      });
+// this.setState({
+//   weather: response.data.list[0].weather,
+//   temp: response.data.list[0].main.temp,
+//   city: response.data.list[0].name,
+//   country: response.data.sys.country,
+//   humidity: response.data.list[0].main.humidity,
+//   description: response.data.list[0].weather[0].description,
+//   error: ""
+// });
+// console.log(response.data.list[0]);
+// console.log(response.data.list.main.temp);
+// console.log(response.data.list[0].name);
+// console.log(response.data.list[0].sys.country);
+// console.log(response.data.list[0].main.humidity);
+// console.log(response.data.list[0].description);
+// this.setState({
+//   weather: response.data.list[0].weather,
+//   temp: response.data.list[0].main.temp,
+//   city: response.data.list[0].name,
+//   country: response.data.sys.country,
+//   humidity: response.data.list[0].main.humidity,
+//   description: response.data.list[0].weather[0].description,
+//   error: ""
+// });
+// console.log(response.data.list[0]);
+// console.log(response.data.list.main.temp);
+// console.log(response.data.list[0].name);
+// console.log(response.data.list[0].sys.country);
+// console.log(response.data.list[0].main.humidity);
+// console.log(response.data.list[0].description);
