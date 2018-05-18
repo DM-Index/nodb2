@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-// Import Components Here
+// Import Components Here Below
 import Titles from "./components/Titles/Titles.js";
 import Form from "./components/Form/Form";
 import Weather from "./components/Weather/Weather.js";
@@ -25,7 +25,7 @@ class App extends Component {
   }
   // Persistent error on line #34
   // This takes the response from our input and sends the search results for city to our server
-  // Err =  Empty Response
+  // Error =  Empty Response
   getWeather = param => {
     axios
       .get(`/data/weather/${param}`)
