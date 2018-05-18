@@ -1,0 +1,13 @@
+/* FOOTER */
+.footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  text-align: right;
+  background-color: #474747;
+  border-top: 3px solid black;
+  width: 100vw;
+  height: 75px;
+  text-align: center;
+  align-content: flex-end;
+}

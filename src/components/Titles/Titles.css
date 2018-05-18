@@ -1,0 +1,15 @@
+/* TITLES */
+.titles {
+    text-align: right;
+  }
+  
+  .title-container {
+    text-align: center;
+    justify-content: center;
+    display: inline-block;
+  }
+  
+  .titles-container {
+    display: flex;
+    text-align: center;
+  }

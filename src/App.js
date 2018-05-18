@@ -1,11 +1,13 @@
 import React, { Component } from "react";
 // Import Components Here Below
-import Titles from "./components/Titles/Titles.js";
+import Container from "./components/Container/Container";
+import Titles from "./components/Titles/Titles";
 import Form from "./components/Form/Form";
-import Weather from "./components/Weather/Weather.js";
+import Weather from "./components/Weather/Weather";
+import Footer from "./components/Footer/Footer";
 // Importing axios for as HTTP client
 import axios from "axios";
-// Main Style Folder
+// App.css contains a basic reset.css: Rest of styling is with relevant components.
 import "./App.css";
 
 class App extends Component {
@@ -38,18 +40,19 @@ class App extends Component {
       });
   };
 
-  //Render Weather Response In Div
+  //Components rendered in top-down in parent div.
   render() {
     return (
       <div className="App">
-        <div id="container" />
-        <Titles className="titles" />
-        <Form className="form" getWeather={() => this.getWeather()} />
+        <Container />
+        <Titles />
+        <Form onSubmit={() => this.getWeather()} />
         <Weather />
-        <div className="footer" display="horizontal" />
+        <Footer />
       </div>
     );
   }
 }
-
 export default App;
+
+// <Form className="form" onSubmit={() => this.getWeather()} />
