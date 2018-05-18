@@ -28,13 +28,10 @@ module.exports = {
         "http://api.openweathermap.org/data/2.5/weather?q=Dallas&type=accurate&APPID=0ee7c0a760947bbbbf1ed51ba8118579"
       )
       .then(response => {
-        // ^ I should probably be using map, right?
         res
           .status(200)
-          .json()
-          // ^ REFERENCE ERROR here: JSON is not defined
+          .json(response)
           .catch(error => {
-            // ^ UNHANDLED PROMISE REJECTION TypeError: res.status(...).json(...).catch is not a function
             console.log("Error", error);
           });
       });
