@@ -1,16 +1,17 @@
 import React from "react";
+import "./Weather.css";
 // This function exports directly into the App Render Method. Everything on this page seems functional.
 const Weather = props => {
   console.log(props);
   return (
-    <div className="weather__info">
-      <p>City: {props.city}</p>
-      <p>Temp: {props.temp}</p>
-      <p>Humidity: {props.humidity}</p>
-      <p>Country: {props.country}</p>
-      <p>Description: {props.description}</p>
-      <p>Error: {props.error}</p>
-    </div>
+    <ul id="weather__info">
+      <li>City: {props.city}</li>
+      <li>Temp: {props.temp}</li>
+      <li>Humidity: {props.humidity}</li>
+      <li>Country: {props.country}</li>
+      <li>Description: {props.description}</li>
+      <li>Error: {props.error}</li>
+    </ul>
   );
 };
 

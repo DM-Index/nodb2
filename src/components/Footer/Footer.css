@@ -4,10 +4,9 @@
   left: 0;
   bottom: 0;
   text-align: right;
-  background-color: #474747;
+  background-color: #26364a;
   border-top: 3px solid black;
   width: 100vw;
-  height: 75px;
+  height: 45px;
   text-align: center;
-  align-content: flex-end;
 }

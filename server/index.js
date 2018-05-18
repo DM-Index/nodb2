@@ -19,7 +19,7 @@ app.use(cors());
 const { getData } = require(`${__dirname}/controllers/weather_controller`);
 // Get initial data
 app.get("/data/weather/:search", getData);
-// ----^ CB function is not working, logging as an anon obj----
+//! ----^ CB function is not working, logging as an anon obj----
 
 // Init's server and opens up requests and responses to server
 app.listen(port, () => console.log(`Now Listening To Port:${port}FM`));
