@@ -4,7 +4,7 @@ const axios = require("axios");
 const cors = require("cors");
 require("dotenv").config();
 const API_KEY = process.env.API_KEY;
-//const URL = `api.openweathermap.org/data/2.5/weather?q=${search}&APPID=${API_KEY}`;
+const URL = `api.openweathermap.org/data/2.5/weather?q=${search}&APPID=${API_KEY}`;
 
 const app = express();
 const port = 3001;

@@ -7,7 +7,6 @@ import Titles from "./components/Titles/Titles.js";
 import axios from "axios";
 
 import "./App.css";
-const API_KEY = process.env.API_KEY;
 
 class App extends Component {
   constructor() {
@@ -36,9 +35,9 @@ class App extends Component {
       });
   };
 
-  // updateWeatherLocation(event) {
-  //   this.setState({ location: event.target.value });
-  // }
+  updateWeatherLocation(event) {
+    this.setState({ location: event.target.value });
+  }
 
   render() {
     return (
@@ -47,7 +46,6 @@ class App extends Component {
         <Titles className="titles" />
 
         <Form className="form" getWeather={this.getWeather} />
-
         <Weather />
 
         <div className="footer" display="horizontal" />
