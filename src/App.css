@@ -54,6 +54,12 @@
   justify-content: center;
   display: inline-block;
 }
+
+.titles-container {
+  display: flex;
+  text-align: center;
+}
+
 /* FORM */
 #form {
   display: inline;
@@ -69,6 +75,10 @@
   height: 35px;
 }
 
+.input-sub {
+  width: 500px;
+}
+
 /* FOOTER */
 .footer {
   position: absolute;
@@ -81,24 +91,4 @@
   height: 75px;
   text-align: center;
   align-content: flex-end;
-}
-
-.input-sub {
-  width: 500px;
-}
-
-#test {
-  background-color: #4caf50; /* Green */
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-}
-
-.titles-container {
-  display: flex;
-  text-align: center;
 }

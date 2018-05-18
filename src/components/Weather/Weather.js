@@ -1,6 +1,7 @@
 import React from "react";
 // What do i do with this? Props can't move from a child to parent so how is this information getting out?
 const Weather = props => {
+  console.log(props);
   return (
     <div className="weather__info">
       <p>City: {props.city}</p>

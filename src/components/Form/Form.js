@@ -16,6 +16,7 @@ export default class Form extends Component {
     console.log(e);
     // ^ This is still tracking empty objects
     this.setState({ search: e.target.value });
+    e.preventDefault();
   }
   // Sets value of Search = Results.
   onClickHandler(props) {
@@ -23,6 +24,7 @@ export default class Form extends Component {
   }
 
   render() {
+    console.log(this.props);
     return (
       <div className="form">
         <input

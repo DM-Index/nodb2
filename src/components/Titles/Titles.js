@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 
-// const Titles = () => (
 class Titles extends Component {
   render() {
     return (

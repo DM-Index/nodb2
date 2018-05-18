@@ -12,28 +12,27 @@ module.exports = {
         "http://api.openweathermap.org/data/2.5/weather?q=Dallas&type=accurate&APPID=0ee7c0a760947bbbbf1ed51ba8118579"
       )
       .then(response => {
-        return (response = response.Weather);
-        console.log(weather);
+        return (response.data = weather);
       })
       .catch(error => {
         console.log("Error", error);
       });
   },
   getData: (req, res) => {
-    console.log("ghello");
+    console.log("getData");
     const { search } = req.params;
-    // getData Function is not firing
     axios
       .get(
         "http://api.openweathermap.org/data/2.5/weather?q=Dallas&type=accurate&APPID=0ee7c0a760947bbbbf1ed51ba8118579"
       )
       .then(response => {
-        console.log(response);
+        // ^ I should probably be using map, right?
         res
           .status(200)
           .json()
           // ^ REFERENCE ERROR here: JSON is not defined
           .catch(error => {
+            // ^ UNHANDLED PROMISE REJECTION TypeError: res.status(...).json(...).catch is not a function
             console.log("Error", error);
           });
       });
