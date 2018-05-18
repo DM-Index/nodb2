@@ -5,7 +5,7 @@ import Titles from "./components/Titles/Titles";
 import Form from "./components/Form/Form";
 import Weather from "./components/Weather/Weather";
 import Footer from "./components/Footer/Footer";
-// Importing axios for as HTTP client
+// Importing axios as HTTP client
 import axios from "axios";
 // App.css contains a basic reset.css: Rest of styling is with relevant components.
 import "./App.css";
@@ -13,7 +13,8 @@ import "./App.css";
 class App extends Component {
   constructor(props) {
     super(props);
-
+    //The are properties we want from the api, default state is empty array that is populated with response.data
+    //State changes come in from <Form /> Component
     this.state = {
       weather: [],
       temp: [],
@@ -40,13 +41,13 @@ class App extends Component {
       });
   };
 
-  //Components rendered in top-down in parent div.
+  //Components rendered top-down in parent div.
   render() {
     return (
       <div className="App">
         <Container />
         <Titles />
-        <Form onSubmit={() => this.getWeather()} />
+        <Form />
         <Weather />
         <Footer />
       </div>

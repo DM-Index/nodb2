@@ -11,10 +11,10 @@ export default class Form extends Component {
     this.onClickHandler = this.onClickHandler.bind(this);
   }
   // Tracks typing changes
-  // This currently sends logs empty proxy o
+  //! This currently sends logs empty proxy o
   updateChange(e) {
     console.log(e);
-    // ^ This is still tracking empty objects
+    //! ^ This is still tracking empty objects
     this.setState({ search: e.target.value });
     e.preventDefault();
   }
@@ -34,8 +34,7 @@ export default class Form extends Component {
         <button
           onClick={() => this.props.getWeather(this.state.search)}
           id="form-button"
-
-          // ^ TypeError: _this2.props.getWeather is not a function
+          //! ^ TypeError: _this2.props.getWeather is not a function
         />
       </div>
     );
