@@ -1,16 +1,24 @@
 import React, { Component } from "react";
 
 export default class Form extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
-      search: ""
+      //DEFINE SEARCH
+      search: "",
+      results: {}
     };
     this.updateChange = this.updateChange.bind(this);
+    this.onClickHandler = this.onClickHandler.bind(this);
   }
-
+  // Tracks typing changes
   updateChange(e) {
+    console.log(e);
     this.setState({ search: e.target.value });
+  }
+  // Sets value of Search = Results.
+  onClickHandler(props) {
+    this.setState({ results: this.props.search });
   }
 
   render() {
@@ -19,9 +27,8 @@ export default class Form extends Component {
         <input
           className="form-input"
           type="text"
-          name="Query"
-          placeholder="Search Here..."
-          onChange={this.updateChange}
+          placeholder="Search City Here..."
+          onChange={e => this.updateChange(e)}
         />
 
         <button

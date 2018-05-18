@@ -1,3 +1,26 @@
+//Moved this to the ctrl folder
+// app.get("/api/getWeather/:city", function(req, res) {
+//   console.log(req.params.city);
+//   axios
+//     .get(
+//       `api.openweathermap.org/data/2.5/weather?q=${
+//         req.params.city
+//       }&APPID=0ee7c0a760947bbbbf1ed51ba8118579`
+//     )
+//     .then(resp => {
+//       res.status(200).json(resp);
+//       console.log(resp);
+//     })
+//     .catch(err => console.log(err));
+//   res.send(req.params).json();
+// });
+
+
+
+//api.openweathermap.org/data/2.5/weather?q=Dallas&type=accurate&APPID=0ee7c0a760947bbbbf1ed51ba8118579
+
+
+
 async componentDidMount() {
   const res = await fetch('http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${API_KEY}&units=metric')
   const api_call = await res.json()
@@ -67,3 +90,7 @@ componentDidMount() {
   // }
 
     // console.log(query);
+
+      // updateWeatherLocation(event) {
+  //   this.setState({ location: event.target.value });
+  // }

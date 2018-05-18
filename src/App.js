@@ -23,10 +23,11 @@ class App extends Component {
     };
     this.getWeather = this.getWeather.bind(this);
   }
-
-  getWeather = query => {
+  // Persistent error on line #34
+  // This takes the response from our input and sends the search results for city to our server
+  getWeather = param => {
     axios
-      .get(`/api/getWeather/${query}`)
+      .get(`/data/2.5/Weather/${param}`)
       .then(response => {
         console.log(response);
       })
@@ -35,18 +36,14 @@ class App extends Component {
       });
   };
 
-  updateWeatherLocation(event) {
-    this.setState({ location: event.target.value });
-  }
-
   render() {
     return (
       <div className="App">
-        <div id="header-container" />
+        <div id="container" />
         <Titles className="titles" />
 
         <Form className="form" getWeather={this.getWeather} />
-        <Weather />
+        <Weather>{Weather}</Weather>
 
         <div className="footer" display="horizontal" />
       </div>
