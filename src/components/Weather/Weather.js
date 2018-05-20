@@ -10,7 +10,6 @@ const Weather = props => {
       <li>Humidity: {props.humidity}</li>
       <li>Country: {props.country}</li>
       <li>Description: {props.description}</li>
-      <li>Error: {props.error}</li>
     </ul>
   );
 };

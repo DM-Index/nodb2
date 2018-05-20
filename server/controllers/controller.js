@@ -1,7 +1,7 @@
 const axios = require("axios");
 //This is where we store API response data.
 
-const getWeather = (req, res, next) => {
+const getWeather = (req, res) => {
   axios
     .get(
       "http://api.openweathermap.org/data/2.5/weather?q=Dallas&type=accurate&APPID=0ee7c0a760947bbbbf1ed51ba8118579"

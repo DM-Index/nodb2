@@ -1,55 +1,43 @@
 import React, { Component } from "react";
+import axios from "axios";
 
 export default class Form extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
-      search: [],
-      results: []
+      input: "",
+      search: "",
+      responseObj: {}
     };
-    this.handleChange = this.handleChange.bind(this);
-    this.onSubmitHandler = this.onSubmitHandler.bind(this);
+    this.handleInput = this.handleInput.bind(this);
+    this.handleSearch = this.handleSearch.bind(this);
   }
-  // Tracks typing changes
-  //! This currently sends logs empty proxy o
-  handleChange(val) {
+  handleInput(val) {
     console.log(val);
-    //! ^ This is still tracking empty objects
-    val.preventDefault();
-    this.setState({ search: val });
-    // val.preventDefault();
+    this.setState({ input: val });
   }
-  // Sets value of Search = Results.
-  onSubmitHandler(props) {
-    this.setState({ results: this.props.search });
+  handleSearch() {
+    axios
+      .get(
+        `http://api.openweathermap.org/data/2.5/weather?q=${
+          this.state.input
+        }&type=accurate&APPID=0ee7c0a760947bbbbf1ed51ba8118579`
+      )
+      .then(response => this.setState({ responseObj: response }))
+      .catch(error => {
+        console.log(error);
+      });
   }
 
   render() {
-    console.log(this.props);
     return (
       <div>
         <input
           placeholder="Search City Here..."
-          onChange={val => this.handleChange(val)}
+          onChange={e => this.handleInput(e.target.value)}
         />
-        <button onSubmit={() => this.props.getWeather(this.state.search)} />
+        <button onClick={() => this.props.handleSearch()} />
       </div>
     );
   }
 }
-
-// render() {
-//   console.log(this.props);
-//   return (
-//     <div className="form">
-//       <input
-//         placeholder="Search City Here..."
-//         onChange={val => this.handleChange(val)}
-//       />
-//       <button onSubmit={() => this.props.getWeather(this.state.search)} />
-//     </div>
-//   );
-// }
-// }
-
-// <button onSubmit={() => this.props.getWeather(this.state.search)} />
