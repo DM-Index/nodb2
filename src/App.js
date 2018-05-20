@@ -6,7 +6,6 @@ import Form from "./components/Form/Form";
 import Weather from "./components/Weather/Weather";
 import Footer from "./components/Footer/Footer";
 // Importing axios as HTTP client
-import axios from "axios";
 // App.css contains a basic reset.css: Rest of styling is with relevant components.
 import "./App.css";
 
@@ -24,28 +23,17 @@ class App extends Component {
       error: [],
       location: []
     };
-    this.getWeather = this.getWeather.bind(this);
   }
   //! Persistent error on line #34
   // This takes the response from our input and sends the search results for city to our server
   //! Error =  Empty Response
-  getWeather = param => {
-    axios
-      .get(`/data/weather/${param}`)
-      .then(response => {
-        console.log(response);
-        //! ^ is logging but what do i do with the data?
-      })
-      .catch(error => {
-        console.log("Error", error);
-      });
-  };
+
   // Components rendered top-down in parent div.
   render() {
     return (
       <div className="App">
-        <Footer />
         <Container />
+        <Footer />
         <Titles />
         <Form />
         <Weather />

@@ -1,8 +1,7 @@
+const express = require("express");
 const { json } = require("body-parser");
-const axios = require("axios");
 const cors = require("cors");
-require("dotenv").config();
-const mc = require("./controllers/weather_controller");
+const mc = require("./controllers/controller");
 // App/Server Declaration
 const app = express();
 
@@ -12,7 +11,7 @@ app.use(json());
 app.use(cors());
 // Controller Methods
 // Get initial data
-app.get("/api/data/weather/:search", mc.read);
+app.get("/api/data/weather/:search", mc.getWeather);
 //! ----^ CB function is not working, logging as an anon obj----
 
 // Init's server and opens up requests and responses to server
