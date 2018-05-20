@@ -1,11 +1,9 @@
 import React, { Component } from "react";
 // Import Components Here Below
 import Container from "./components/Container/Container";
-import Header from "./components/Header/Header";
 import Titles from "./components/Titles/Titles";
 import Form from "./components/Form/Form";
 import Weather from "./components/Weather/Weather";
-import Smile from "./components/Smile/Smile";
 import Footer from "./components/Footer/Footer";
 // Importing axios as HTTP client
 import axios from "axios";
@@ -46,13 +44,11 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header />
-        <Smile />
+        <Footer />
         <Container />
         <Titles />
         <Form />
         <Weather />
-        <Smile />
         <Footer />
       </div>
     );

@@ -10,30 +10,32 @@ module.exports = {
   read: (req, res) => {
     axios
       .get(
-        "http://api.openweathermap.org/data/2.5/weather?q=Dallas&type=accurate&APPID=0ee7c0a760947bbbbf1ed51ba8118579"
+        "http://api.openweathermap.org/data/2.5/weather?q=Dallas&type=accurate&appid=0ee7c0a760947bbbbf1ed51ba8118579"
       )
       .then(response => {
         console.log(response);
-        return (response.data = weather);
+        // return (response.data = weather);
+        res.status(200).json(response.data);
+        // ^ REQ.BODY
       })
       .catch(error => {
         console.log("Error", error);
       });
-  },
-  getData: (req, res) => {
-    console.log("getData");
-    const { search } = req.params;
-    axios
-      .get(
-        "http://api.openweathermap.org/data/2.5/weather?q=Dallas&type=accurate&APPID=0ee7c0a760947bbbbf1ed51ba8118579"
-      )
-      .then(response => {
-        res
-          .status(200)
-          .json(response)
-          .catch(error => {
-            console.log("Error", error);
-          });
-      });
   }
+  // getData: (req, res) => {
+  //   console.log("getData");
+  //   const { search } = req.params;
+  //   axios
+  //     .get(
+  //       "http://api.openweathermap.org/data/2.5/weather?q=Dallas&type=accurate&APPID=0ee7c0a760947bbbbf1ed51ba8118579"
+  //     )
+  //     .then(response => {
+  //       res
+  //         .status(200)
+  //         .json(response)
+  //         .catch(error => {
+  //           console.log("Error", error);
+  //         });
+  //     });
+  // }
 };

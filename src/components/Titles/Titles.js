@@ -1,7 +1,8 @@
-import React from "react";
+import React, { Component } from "react";
 import "./Titles.css";
 
-const Titles = () => {
+class Titles extends Component {
+  render() {
     return (
       <div className="title-container">
         <h1 id="title-container__title">My Weather App</h1>
@@ -11,6 +12,6 @@ const Titles = () => {
       </div>
     );
   }
-
+}
 // );
 export default Titles;

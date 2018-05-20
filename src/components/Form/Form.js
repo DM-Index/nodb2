@@ -12,11 +12,12 @@ export default class Form extends Component {
   }
   // Tracks typing changes
   //! This currently sends logs empty proxy o
-  handleChange(e) {
-    console.log(e);
+  handleChange(val) {
+    console.log(val);
     //! ^ This is still tracking empty objects
-    this.setState({ search: e.target.value });
-    e.preventDefault();
+    val.preventDefault();
+    this.setState({ search: val });
+    // val.preventDefault();
   }
   // Sets value of Search = Results.
   onSubmitHandler(props) {
@@ -29,7 +30,7 @@ export default class Form extends Component {
       <div>
         <input
           placeholder="Search City Here..."
-          onChange={e => this.handleChange(e)}
+          onChange={val => this.handleChange(val)}
         />
         <button onSubmit={() => this.props.getWeather(this.state.search)} />
       </div>
@@ -43,7 +44,7 @@ export default class Form extends Component {
 //     <div className="form">
 //       <input
 //         placeholder="Search City Here..."
-//         onChange={e => this.handleChange(e)}
+//         onChange={val => this.handleChange(val)}
 //       />
 //       <button onSubmit={() => this.props.getWeather(this.state.search)} />
 //     </div>
