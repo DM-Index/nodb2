@@ -11,7 +11,7 @@ app.use(json());
 app.use(cors());
 // Controller Methods
 // Get initial data
-app.get("/api/data/weather/:search", mc.getWeather);
+app.get("/api/weather", mc.getWeather);
 //! ----^ CB function is not working, logging as an anon obj----
 
 // Init's server and opens up requests and responses to server

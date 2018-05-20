@@ -14,15 +14,7 @@ class App extends Component {
     super(props);
     //The are properties we want from the api, default state is empty array that is populated with response.data
     //State changes come in from <Form /> Component
-    this.state = {
-      weather: [],
-      temp: [],
-      city: [],
-      humidity: [],
-      description: [],
-      error: [],
-      location: []
-    };
+    this.state = {};
   }
   //! Persistent error on line #34
   // This takes the response from our input and sends the search results for city to our server

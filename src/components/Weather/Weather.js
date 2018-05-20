@@ -15,3 +15,8 @@ const Weather = props => {
 };
 
 export default Weather;
+
+<form>
+  <input type="text">FirstName</input> <input type="text">LastName</input>{" "}
+  <button>submit</button>{" "}
+</form>;

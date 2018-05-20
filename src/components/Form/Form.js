@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import axios from "axios";
 
+const url = "http://api.openweathermap.org/data/2.5/weather?q=$";
+const apd = "0ee7c0a760947bbbbf1ed51ba8118579";
+
 export default class Form extends Component {
   constructor() {
     super();
@@ -19,11 +22,16 @@ export default class Form extends Component {
   handleSearch() {
     axios
       .get(
-        `http://api.openweathermap.org/data/2.5/weather?q=${
+        `${url}${(this.state.input,
+        console(
           this.state.input
-        }&type=accurate&APPID=0ee7c0a760947bbbbf1ed51ba8118579`
+        ))}&type=accurate&APPID=0ee7c0a760947bbbbf1ed51ba8118579`
       )
-      .then(response => this.setState({ responseObj: response }))
+      .then(response => {
+        this.setState({
+          responseObj: response
+        });
+      })
       .catch(error => {
         console.log(error);
       });
@@ -31,12 +39,11 @@ export default class Form extends Component {
 
   render() {
     return (
-      <div>
+      <div action={() => this.handleSearch()}>
         <input
           placeholder="Search City Here..."
           onChange={e => this.handleInput(e.target.value)}
         />
-        <button onClick={() => this.props.handleSearch()} />
       </div>
     );
   }

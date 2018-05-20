@@ -1,19 +1,17 @@
 const axios = require("axios");
 //This is where we store API response data.
-
+const url = "http://api.openweathermap.org/data/2.5/weather?q";
+const apd = "0ee7c0a760947bbbbf1ed51ba8118579";
 const getWeather = (req, res) => {
   axios
-    .get(
-      "http://api.openweathermap.org/data/2.5/weather?q=Dallas&type=accurate&APPID=0ee7c0a760947bbbbf1ed51ba8118579"
-    )
+    .get(`${url}=Dallas&type=accurate&APPID=${apd}`)
     .then(response => {
       res.status(200).json(response.data);
       console.log(response);
     })
     .catch(error => {
-      console.log("Error", error);
-    })
-    .console.log(error);
+      console.log(error && "Get Weather Failure");
+    });
 };
 
 module.exports = {
