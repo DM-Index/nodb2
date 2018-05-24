@@ -18,12 +18,7 @@ app.get("/api/weather/:city", function(req, res, next) {
   next();
 });
 
-app.post("/", function(req, res, next) {
-  console.log(req.body);
-  let city = req.body.city;
-  let url = `http://api.openweathermap.org/data/2.5/forecast?q=${city},tx,1&appid=0ee7c0a760947bbbbf1ed51ba8118579`;
-  next();
-});
+app.post("/api/sendWeather", mc.postWeather);
 
 // Init's server and opens up requests and responses to server
 app.listen(port, () => console.log(`Now Listening To Port:${port}FM`));

@@ -12,6 +12,7 @@ export default class Form extends Component {
     };
     this.handleInput = this.handleInput.bind(this);
     this.handleSearch = this.handleSearch.bind(this);
+    this.handlePost = this.handlePost.bind(this);
   }
   handleInput(val) {
     console.log(val);
@@ -34,9 +35,9 @@ export default class Form extends Component {
   }
   handlePost() {
     axios
-      .post(
-        "http://api.openweathermap.org/data/2.5/forecast?q=dallas,tx,1&appid=0ee7c0a760947bbbbf1ed51ba8118579"
-      )
+      .post("/api/sendWeather", {
+        q: "dallas"
+      })
       .then(res => {
         console.log(res, "HandlePost Response");
         this.setState({
@@ -49,7 +50,6 @@ export default class Form extends Component {
   }
 
   render() {
-    console.log(this.state.responseObj);
     return (
       <div>
         <input
@@ -57,8 +57,14 @@ export default class Form extends Component {
           onChange={e => this.handleInput(e.target.value)}
         />
         <button onClick={() => this.handleSearch()}> Search </button>
-        <Weather Weather={this.state.responseObj} />
+        <input
+          placeholder="Post"
+          onChange={e => this.handleInput(e.target.value)}
+        />
+        <button onClick={() => this.handlePost()}> Post </button>
+        <Weather>{this.state.responseObj}</Weather>
       </div>
     );
   }
 }
+// send obj data from front to the back declare objData then json it back to the front
