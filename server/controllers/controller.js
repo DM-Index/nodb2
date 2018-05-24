@@ -1,64 +1,29 @@
 const axios = require("axios");
-//This is where we store API response data.
-const url = "http://api.openweathermap.org/data/2.5/weather?q";
-const apd = "0ee7c0a760947bbbbf1ed51ba8118579";
+
+// http://api.openweathermap.org/data/2.5/forecast?q=dallas,tx,1&appid=0ee7c0a760947bbbbf1ed51ba8118579
+axios
+  .get(
+    `http://api.openweathermap.org/data/2.5/forecast?q=dallas,tx,1&appid=0ee7c0a760947bbbbf1ed51ba8118579`
+  )
+  .then(response => {
+    console.log(response, "ResObj");
+    resObj = response;
+  })
+  .catch(error => {
+    console.log(error, "getWeather Failure");
+  });
+
 const getWeather = (req, res) => {
-  axios
-    .get(`${url}=Dallas&type=accurate&APPID=${apd}`)
-    .then(response => {
-      res.status(200).json(response.data);
-      console.log(response);
-    })
-    .catch(error => {
-      console.log(error && "Get Weather Failure");
-    });
+  res.status(200).json(resObj);
+};
+
+const postWeather = (req, res, next) => {
+  const { weather, data } = req.body;
+  responseObj.push;
+  console.log(req.body);
 };
 
 module.exports = {
-  getWeather
+  getWeather,
+  postWeather
 };
-
-// getWeather = param => {
-//   axios
-//     .get(`/data/weather/${param}`)
-//     .then(response => {
-//       console.log(response);
-//       //! ^ is logging but what do i do with the data?
-//     })
-//     .catch(error => {
-//       console.log("Error", error);
-//     });
-// };
-
-// module.exports = {
-//   read: (req, res) => {
-//     axios
-//       .get(
-//         "http://api.openweathermap.org/data/2.5/weather?q=Dallas&type=accurate&appid=0ee7c0a760947bbbbf1ed51ba8118579"
-//       )
-//       .then(response => {
-//         console.log(response);
-//         // return (response.data = weather);
-//         res.status(200).json(response.data);
-//         // ^ REQ.BODY
-//       })
-//       .catch(error => {
-//         console.log("Error", error);
-//       });
-//   }
-// getData: (req, res) => {
-//   console.log("getData");
-//   const { search } = req.params;
-//   axios
-//     .get(
-//       "http://api.openweathermap.org/data/2.5/weather?q=Dallas&type=accurate&APPID=0ee7c0a760947bbbbf1ed51ba8118579"
-//     )
-//     .then(response => {
-//       res
-//         .status(200)
-//         .json(response)
-//         .catch(error => {
-//           console.log("Error", error);
-//         });
-//     });
-// }

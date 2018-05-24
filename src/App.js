@@ -3,7 +3,6 @@ import React, { Component } from "react";
 import Container from "./components/Container/Container";
 import Titles from "./components/Titles/Titles";
 import Form from "./components/Form/Form";
-import Weather from "./components/Weather/Weather";
 import Footer from "./components/Footer/Footer";
 // Importing axios as HTTP client
 // App.css contains a basic reset.css: Rest of styling is with relevant components.
@@ -16,19 +15,17 @@ class App extends Component {
     //State changes come in from <Form /> Component
     this.state = {};
   }
-  //! Persistent error on line #34
-  // This takes the response from our input and sends the search results for city to our server
-  //! Error =  Empty Response
 
-  // Components rendered top-down in parent div.
+  // http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${API_KEY}&units=metric`
+
   render() {
     return (
       <div className="App">
         <Container />
         <Footer />
         <Titles />
+        <Footer />
         <Form />
-        <Weather />
         <Footer />
       </div>
     );

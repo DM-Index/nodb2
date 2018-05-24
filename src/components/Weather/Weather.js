@@ -1,22 +1,16 @@
 import React from "react";
 import "./Weather.css";
-// This function exports directly into the App Render Method. Everything on this page seems functional.
-const Weather = props => {
-  console.log(props);
+
+const Weather = response => {
+  console.log(response);
   return (
     <ul id="weather__info">
-      <li>City: {props.city}</li>
-      <li>Temp: {props.temp}</li>
-      <li>Humidity: {props.humidity}</li>
-      <li>Country: {props.country}</li>
-      <li>Description: {props.description}</li>
+      <li>City: {response.name}</li>
+      <li>Temp: {response.temp}</li>
+      <li>Humidity: {response.humidity}</li>
+      <li>Country: {response.country}</li>
     </ul>
   );
 };
 
 export default Weather;
-
-<form>
-  <input type="text">FirstName</input> <input type="text">LastName</input>{" "}
-  <button>submit</button>{" "}
-</form>;

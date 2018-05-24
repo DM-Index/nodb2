@@ -11,8 +11,19 @@ app.use(json());
 app.use(cors());
 // Controller Methods
 // Get initial data
+// this is called an event emitter
 app.get("/api/weather", mc.getWeather);
-//! ----^ CB function is not working, logging as an anon obj----
+app.get("/api/weather/:city", function(req, res, next) {
+  req.params.city;
+  next();
+});
+
+app.post("/", function(req, res, next) {
+  console.log(req.body);
+  let city = req.body.city;
+  let url = `http://api.openweathermap.org/data/2.5/forecast?q=${city},tx,1&appid=0ee7c0a760947bbbbf1ed51ba8118579`;
+  next();
+});
 
 // Init's server and opens up requests and responses to server
 app.listen(port, () => console.log(`Now Listening To Port:${port}FM`));
