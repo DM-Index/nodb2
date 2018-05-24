@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import Container from "./components/Container/Container";
 import Titles from "./components/Titles/Titles";
 import Form from "./components/Form/Form";
+import Copyright from "./components/Copyright/Copyright";
 import Footer from "./components/Footer/Footer";
 // Importing axios as HTTP client
 // App.css contains a basic reset.css: Rest of styling is with relevant components.
@@ -26,7 +27,7 @@ class App extends Component {
         <Titles />
         <Footer />
         <Form />
-        <Footer />
+        <Copyright />
       </div>
     );
   }
